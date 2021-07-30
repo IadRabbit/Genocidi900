@@ -1,0 +1,74 @@
+.modal-dialog {
+	max-width: 1000px;
+}
+
+.modal-mini {
+	max-width: 550px;
+}
+
+.modal-mini {
+	max-width: 550px;
+}
+
+.carousel .item img {
+	max-height: 768px;
+	min-width: auto;
+}
+
+.red_square {
+	background-color: red;
+}
+
+.blue_square {
+	background-color: blue;
+}
+
+.white_square {
+	background-color: white;
+}
+
+.green_square {
+	background-color: green;
+}
+
+.info {
+	padding: 15px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+}
+
+.legend {
+	background-color: "black";
+	line-height: 25px;
+	color: #555;
+	width: auto;
+}
+
+.legend i {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+
+.btnLegend {
+	width: 100px;
+	margin-bottom: 20px;
+	height: 60px;
+}
+
+.description {
+	font-size: 20px;
+}
+
+.title-slide {
+	font-size: 50px;
+}
+
+.description-slide {
+	font-size: 20px;
+}

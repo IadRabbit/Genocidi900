@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>L'iceberg del Genocidio</title>
+	<link rel="icon" href="imgs/favicon.svg">
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="css/iceberg.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="modal fade" id="modalTurchia" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselTurchia" class="carousel slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselTurchia" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselTurchia" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carouselTurchia" data-bs-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/armeni1.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block"></div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/armeni2.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block"></div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/armeno-slide.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block"></div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselTurchia" role="button" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselTurchia" role="button" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalFoibe" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselFoibe" class="carousel slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselFoibe" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselFoibe" data-bs-slide-to="1"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/foibe.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>Le foibe scoperte</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/foibe-slide.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block"></div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselFoibe" role="button" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselFoibe" role="button" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalGermania" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-mini" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselGermania" class="carousel slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselGermania" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselGermania" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carouselGermania" data-bs-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/dachau.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>Campo di concentramento di Dachau</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/hitler.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Adolf Hitler</h5>
+									<p class="description-slide">Il dittatore che causò un genocidio di più di 6.000.000 di Ebrei</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/schindler.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Oskar Schindler</h5>
+									<p class="description-slide">Riuscì a salvare più di 1000 Ebrei dallo sterminio della Shoah</p>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselGermania" role="button" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselGermania" role="button" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalPolonia" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselPolonia" class="carousel slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselPolonia" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselPolonia" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carouselPolonia" data-bs-slide-to="2"></li>
+							<li data-bs-target="#carouselPolonia" data-bs-slide-to="3"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/auschwitz.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Campo di concentramento di Auschwitz</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/auschwitz2.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Il treno di Auschwitz</h5>
+									<p class="description-slide">L'ingresso ferroviario davanti al campo di concentramento</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/Auschwitz-bambini.jpeg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Bambini Ebrei</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/fame.jpeg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Camerate dei campi</h5>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselPolonia" role="button" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselPolonia" role="button" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalRomania" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-mini" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselRomania" class="carousel slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselRomania" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselRomania" data-bs-slide-to="1"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/traian_popovici.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Traian Popovici</h5>
+									<p class="description-slide">Durante la seconda guerra mondiale salvo 20.000 Ebrei dalla deportazione.</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="flex-video">
+									<iframe width="500" height="550"
+										src="https://www.youtube.com/embed/lefjF0iOQfI?start=47" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselRomania" role="button" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselRomania" role="button" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalItalia" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-mini" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="carouselItalia" class="carousel slide" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselItalia" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselItalia" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carouselItalia" data-bs-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="imgs/ebrei.jpg"
+									class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>Deportazione Ebraica, ghetto di Roma</h5>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/giorgio_perlasca.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Giorgio Perlasca</h5>
+									<p class="description-slide">Fingendosi console generale spagnolo, salvò la vita di oltre cinquemila ebrei ungheresi</p>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="imgs/primo_levi.jpg" class="d-block w-100">
+								<div class="carousel-caption d-none d-md-block">
+									<h5 class="title-slide">Primo Levi</h5>
+									<p class="description-slide">Italiano di origine Ebraica sopravvissuto ad Auschwitz</p>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselItalia" role="button" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselItalia" role="button" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="iceberg">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"
+			class="world">
+			<defs>
+				<linearGradient id="beam-mask-gradient" x1="170" y1="503.73" x2="170" y2="2.29"
+					gradientUnits="userSpaceOnUse">
+					<stop offset="0" />
+					<stop offset="1" stop-color="#fff" />
+				</linearGradient>
+				<mask id="beam-mask" x="-50" y="-0.27" width="440" height="508" maskUnits="userSpaceOnUse">
+					<rect fill="url(#beam-mask-gradient)" x="-50" width="440" height="508" />
+				</mask>
+				<linearGradient id="beam-gradient" x1="123.73" y1="240.19" x2="187.2" y2="267.39"
+					gradientUnits="userSpaceOnUse">
+					<stop offset="0" class="beam-gradient" stop-opacity="0.5" />
+					<stop offset="1" class="beam-gradient" stop-opacity="0.1" />
+				</linearGradient>
+				<symbol id="beam" data-name="beam" viewBox="0 0 306 505">
+					<polygon mask="url(#beam-mask)" fill="url(#beam-gradient)"
+						points="79 505 0 505 227 0 306 0 79 505" />
+				</symbol>
+				<linearGradient id="sky-gradient" x1="500" y1="123.81" x2="500" y2="410.73"
+					gradientUnits="userSpaceOnUse">
+					<stop offset="0" class="sky-dark" />
+					<stop offset="1" class="sky-bright" />
+				</linearGradient>
+				<linearGradient id="ocean-gradient" x1="499.5" y1="999.5" x2="499.5" y2="499.5"
+					gradientUnits="userSpaceOnUse">
+					<stop offset="0" class="ocean-deep" stop-color="#306b98" />
+					<stop offset="0.85" class="ocean-shallow" stop-color="#9fc2ca" />
+				</linearGradient>
+				<clipPath id="world">
+					<circle id="clipPath" cx="500" cy="500" r="450" />
+				</clipPath>
+				<clipPath id="waves">
+					<path class="wave"
+						d="M1502,950H-500V632c115-3,147-58,250-58s145,58,250,58,147-58,250-58,145,58,250,58,147-58,250-58,145,58,250,58,147-58,250-58,145,58,250,58C1500,780,1502,950,1502,950Z" />
+				</clipPath>
+				<clipPath id="icebergClip">
+					<path class="wave reverse" class="cls-2"
+						d="M-399,0H1603V504c-115,3-147,58-250,58s-145-58-250-58-147,58-250,58-145-58-250-58-147,58-250,58-145-58-250-58-147,58-250,58-145-58-250-58C-397,356-399,0-399,0Z" />
+				</clipPath>
+			</defs>
+			<g clip-path="url(#world)">
+				<rect fill="url(#sky-gradient)" width="1000" height="500" />
+				<rect class="ocean-surface" x="-1" y="445" width="1000" height="554" />
+				<g clip-path="url(#icebergClip)">
+					<g id="iceBerg" class="ice-berg">
+						<path class="ice"
+							d="M514 504L387 837l-5 14-66-110-25 3-100-282-2-4 2-2 2-3 114-203 18 50 26 17 47-73 47 84 23 83 41 55h5v38z" />
+						<path class="ice-shade"
+							d="M372 803c-5-37-10-72-6-109s-17-59-28-87c-3-8 2-19-2-25-13-21-33-29-50-46-1-2-6 0-8-1-14-11-20-26-36-36s-3-13-4-21-4-4-8-7-2-4-3-4-23-9-34-14l-2 3-2 3v4l102 281 25-3 66 110 5-14c-3-12-13-22-15-34z" />
+						<path class="ice-dark"
+							d="M399 244l-47 66 8 35 39-101zm-90 6l-28 82-27 12 55-94zm-17 495L189 463l4-10 99 292zm92 106l-92-149 46 44 46 105z" />
+					</g>
+				</g>
+				<g clip-path="url(#waves)">
+					<rect fill="url(#ocean-gradient)" x="-1" y="500" width="1000" height="500" />
+					<use xlink:href="#iceBerg" opacity="0.1" />
+					<use class="beam" width="306" height="505.47" transform="translate(217 485)" xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(329 515) scale(0.74)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(410 515) scale(0.58)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(489 477) scale(0.74)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(641 515) scale(0.74)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(542 485) scale(0.93)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(478 485) scale(0.93)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(74 485) scale(0.93)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(299 525) scale(0.46)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(777 525) scale(0.46)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(-50 485) scale(0.84)"
+						xlink:href="#beam" />
+					<use class="beam" width="306" height="505.47" transform="translate(93 500) scale(0.57)"
+						xlink:href="#beam" />
+				</g>
+			</g>
+		</svg>
+		<div class="title">LA PUNTA DELL'ICEBERG DEI GENOCIDI</div>
+	</div>
+	<div id="map"></div>
+	<script src="js/script.js"></script>
+	<script src="js/msgs.js"></script>
+	<script src="js/shoah_countries.js"></script>
+	<script src="js/armenian_countries.js"></script>
+</body>
+
+</html>

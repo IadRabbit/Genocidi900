@@ -1,0 +1,8 @@
+var msg = {
+	"Germania": "<p class=\"description\">La Germania è stato il paese fulcro che ha dato origine all'<strong>Idea parassita</strong> delle leggi razziali. Le quali si diffusero in tutta l'Europa. <strong>Provocando un genocidio che portò alla morte di 6 milioni di Ebrei</strong>.</p>",
+	"Italia": "<p class=\"description\">L'Italia di Mussolini fu una dei paesi che insieme alla Germania di Hitler contribuì maggiormente alla diffusione delle leggi razziali e alla deportazione ebraica nei campi di concentramento. E' importante ricordare l'episodio del ghetto di Roma.</p>",
+	"Turchia": "<p class=\"description\">Con il termine genocidio armeno, si indicano le deportazioni ed eliminazioni di persone di etnia armena perpetrate dall'Impero ottomano tra il 1915 e il 1916, causando circa <strong>1.5 milioni di morti</strong>.</p>",
+	"Romania": "<p class=\"description\">Durante la seconda guerra mondiale la Romania provocò la morte di circa 400.000 Ebrei. Il riconoscimento delle vittime viene riconosciuto solo dopo la fine della dittatura del 1989. Questo avvenimento viene ricordato come <strong>L'Olocausto dimenticato</strong>.</p>",
+	"Polonia": "<p class=\"description\">La Polonia è stato il maggior paese nel quale vennero deportati gli ebrei. E nel quale vennero costruiti i più grandi campi di concentramento, tanto da sembrare proprio delle vere piccole cittadine.</p>",
+	"Foibe": "<p class=\"description\">Le foibe sono fosse comuni utilizzate per l’occultamento dei cadaveri delle vittime di rappresaglie militari e di assassini politici, con un particolare riferimento agli eccidi compiuti dai partigiani Jugoslavi in: Istria, Dalmazia e Venezia Giulia nell’ultima fase della seconda guerra mondiale e nel dopo guerra.</p>",
+}
