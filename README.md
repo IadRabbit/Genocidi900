@@ -5,3 +5,4 @@ A simple cool site built for a school presentation about the genocides happened 
 The templates aren't mine I took it from here
 * **[ICEBERG TEMPLATE](https://codepen.io/g12n/pen/oBGOrY)**
 * **[MAP LIB USED](https://leafletjs.com/)**
+* The images are just taken from internet
